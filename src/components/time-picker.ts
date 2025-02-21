@@ -63,7 +63,7 @@ export class TimePicker extends LitElement {
       ? timeToString(this.time)
       : formatTime(stringToDate(timeToString(this.time)), getLocale(this.hass!));
 
-    const timeParts: string[] = timeString.split(/:|\ /);
+    const timeParts: string[] = timeString.split(/[:.]/);
     timeParts[0] = String(Number(timeParts[0]));
     return timeParts;
   }
